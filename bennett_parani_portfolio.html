@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bennett Parani — Finance &amp; Accounting Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F4EFE4;
+    --cream-deep: #EBE4D3;
+    --ink: #0E1B2C;
+    --ink-soft: #2A3A4F;
+    --muted: #5E6673;
+    --rule: #C9C1AE;
+    --rule-soft: #DDD6C5;
+    --accent: #8B2E1F;
+    --gold: #A0772A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .serif {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 144;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  /* ————— TOP BAR ————— */
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    padding: 1rem 0;
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    background: rgba(244, 239, 228, 0.92);
+  }
+  .topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .brand span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .topbar-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ————— HERO / MASTHEAD ————— */
+  .masthead {
+    padding: 5rem 0 4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .masthead-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .masthead-label::before {
+    content: '';
+    width: 42px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .masthead-label span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .masthead h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin-bottom: 2rem;
+    font-variation-settings: "opsz" 144;
+  }
+  .masthead h1 .italic {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-soft);
+  }
+  .masthead-tagline {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    max-width: 620px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+  .masthead-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 2rem;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .meta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .meta-value {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+  .meta-value a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .meta-value a:hover { border-bottom-color: var(--accent); }
+
+  /* ————— SECTION HEADERS ————— */
+  section { padding: 5rem 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: baseline;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-top: 2px solid var(--accent);
+    padding-top: 0.5rem;
+    display: inline-block;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  /* ————— ABOUT ————— */
+  .about-body {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 3rem;
+  }
+  .about-text {
+    max-width: 680px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  .about-text p + p { margin-top: 1.5rem; }
+  .about-text .lead::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 3.5rem;
+    float: left;
+    line-height: 0.9;
+    padding: 0.15rem 0.75rem 0 0;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  /* ————— EXPERIENCE ————— */
+  .experience-list { display: flex; flex-direction: column; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--rule-soft);
+    align-items: start;
+    transition: background 0.25s;
+  }
+  .exp-item:hover { background: rgba(139, 46, 31, 0.025); }
+  .exp-item:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .exp-dates { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--muted); letter-spacing: 0.03em; padding-top: 0.35rem; }
+  .exp-role h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+  }
+  .exp-company { color: var(--accent); font-size: 0.92rem; font-weight: 500; letter-spacing: 0.01em; }
+  .exp-desc { font-size: 0.95rem; line-height: 1.65; color: var(--ink-soft); }
+
+  /* ————— PROJECTS ————— */
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .project-card {
+    background: var(--cream-deep);
+    padding: 2.5rem;
+    border: 1px solid var(--rule-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .project-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .project-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .project-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .project-card h3 em { font-style: italic; color: var(--ink-soft); }
+  .project-card p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.65; }
+  .project-stats {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    margin-top: auto;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .stat-val { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--accent); display: block; line-height: 1; }
+  .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.4rem; display: block; }
+
+  /* ————— SKILLS / LEDGER ————— */
+  .ledger {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    border-top: 2px solid var(--ink);
+    padding-top: 0;
+  }
+  .ledger-col { padding-top: 2rem; }
+  .ledger-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+  }
+  .ledger-col h4::after { content: attr(data-count); color: var(--muted); font-weight: 400; }
+  .ledger-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.65rem 0;
+    border-bottom: 1px dotted var(--rule-soft);
+    font-size: 0.95rem;
+  }
+  .ledger-row-name { font-family: 'Fraunces', serif; font-weight: 400; }
+  .ledger-row-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* ————— LEADERSHIP ————— */
+  .leadership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .leader-item { border-left: 2px solid var(--accent); padding-left: 2rem; }
+  .leader-item h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+  .leader-role { color: var(--accent); font-size: 0.88rem; margin-bottom: 0.15rem; font-weight: 500; }
+  .leader-dates { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted); margin-bottom: 1rem; }
+  .leader-item p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.65; }
+
+  /* ————— CONTACT ————— */
+  .contact-section {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 6rem 0 3rem;
+    margin: 0 -100vw;
+    padding-left: 100vw;
+    padding-right: 100vw;
+  }
+  .contact-inner { max-width: 1240px; margin: 0 auto; padding: 0 3rem; }
+  .contact-section h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 900px;
+    margin-bottom: 3rem;
+  }
+  .contact-section h2 em { font-style: italic; color: var(--cream-deep); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(244, 239, 228, 0.2);
+  }
+  .contact-grid .meta-label { color: rgba(244, 239, 228, 0.55); }
+  .contact-grid .meta-value { color: var(--cream); font-size: 1rem; }
+  .contact-grid .meta-value a { color: inherit; }
+  .contact-grid .meta-value a:hover { border-bottom-color: var(--cream); }
+
+  .footer {
+    background: var(--ink);
+    color: rgba(244, 239, 228, 0.5);
+    padding: 2rem 0;
+    margin: 0 -100vw;
+    padding-left: 100vw;
+    padding-right: 100vw;
+    border-top: 1px solid rgba(244, 239, 228, 0.12);
+  }
+  .footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ————— FADE-IN ————— */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ————— RESPONSIVE ————— */
+  @media (max-width: 880px) {
+    .container { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .masthead-meta-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .section-header, .about-body { grid-template-columns: 1fr; gap: 1rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+    .projects-grid, .ledger, .leadership-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-section, .footer { padding-left: 1.5rem; padding-right: 1.5rem; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================ TOPBAR ================ -->
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">Bennett Parani<span>.</span></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="topbar-meta">ORL · FL · EST 2005</div>
+  </div>
+</header>
+
+<!-- ================ MASTHEAD ================ -->
+<main class="container">
+<section class="masthead" style="border-bottom: 1px solid var(--rule);">
+  <div class="masthead-label"><span>Portfolio · Vol. I — 2026</span></div>
+  <h1>Bennett<br>Parani<span class="italic">.</span></h1>
+  <p class="masthead-tagline">
+    Dual-major in Accounting &amp; Finance at the University of Central Florida, building
+    disciplined financial models and translating messy data into structured, auditable decisions.
+  </p>
+  <div class="masthead-meta-grid">
+    <div class="meta-item">
+      <span class="meta-label">Location</span>
+      <span class="meta-value">Orlando, Florida</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Institution</span>
+      <span class="meta-value">UCF · Class of 2027</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Focus</span>
+      <span class="meta-value">Valuation · FP&amp;A · Audit</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Status</span>
+      <span class="meta-value">Seeking Summer 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================ ABOUT ================ -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">§ 01 — Profile</span>
+    <h2 class="section-title">A dual discipline. <em>One lens.</em></h2>
+  </div>
+  <div class="about-body">
+    <div></div>
+    <div class="about-text">
+      <p class="lead">I study the mechanics that make businesses either defensible or fragile — and I like the work on both sides of the ledger. On the accounting side, that means rigor: GAAP, reconciliations, retained-earnings rollforwards, and financial statements that tie. On the finance side, it means judgment: modeling cash flows, stress-testing assumptions, and writing investment memos that defend a number.</p>
+      <p>At UCF I'm pursuing a dual B.S. in Accounting &amp; Finance with plans for an M.S. in Accounting or FinTech, positioning me for CPA eligibility and a career spanning valuation, FP&amp;A, and audit-informed strategy. Outside of coursework I run Finance for Delta Sigma Pi's chapter of 100+ members, lead alumni and corporate partnerships for UCF's student-run consulting group, and coach fellow students on budgeting, FAFSA, and scholarship strategy.</p>
+      <p>The work I'm proudest of is the quiet kind — a three-statement model that balances to zero across five projected years, a CRM tracker that replaced a manual process, a budget that finally tells the truth.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================ EXPERIENCE ================ -->
+<section id="experience">
+  <div class="section-header">
+    <span class="section-num">§ 02 — Experience</span>
+    <h2 class="section-title">Where the <em>work</em> has been done.</h2>
+  </div>
+  <div class="experience-list">
+
+    <div class="exp-item">
+      <div class="exp-dates">2025 —<br>PRESENT</div>
+      <div class="exp-role">
+        <h3>Leasing &amp; Marketing Assistant</h3>
+        <div class="exp-company">Asset Living · Orlando, FL</div>
+      </div>
+      <div class="exp-desc">
+        Supported lease-up strategy in UCF's saturated student-housing market, positioning the community #1 among new developments. Built Excel-based pricing and market-tracking tools to monitor competitor specials and support concession recommendations; contributed to preleasing 65% of 700+ beds ahead of opening.
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dates">2025 —<br>PRESENT</div>
+      <div class="exp-role">
+        <h3>Accounting &amp; Finance Coach</h3>
+        <div class="exp-company">We Know Campus · Orlando, FL</div>
+      </div>
+      <div class="exp-desc">
+        Mentor students on FAFSA, scholarships, budgeting, and funding strategy — helping clients identify aid that has contributed to $10,000+ in grants. Lead workshops on credit and introductory finance; build Excel budgeting tools covering 15–20 student profiles per quarter.
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-dates">2024 —<br>2025</div>
+      <div class="exp-role">
+        <h3>Project Coordination Intern</h3>
+        <div class="exp-company">RP Residential Remodeling · Orlando, FL</div>
+      </div>
+      <div class="exp-desc">
+        Managed client invoicing and cost reporting; built tiered Excel pricing models that contributed to a 22% increase in customer inflow. Designed a commission-based payroll model tracking quarterly cash inflows across 15 employees, improving reconciliation efficiency.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================ PROJECTS ================ -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">§ 03 — Selected Work</span>
+    <h2 class="section-title">Models, trackers, and <em>decisions</em>.</h2>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-tag">Valuation · DCF</div>
+      <h3>Microsoft (MSFT) <em>Equity Valuation</em></h3>
+      <p>A fully integrated three-statement financial model with segment-level projections across bear, base, and bull cases for Microsoft's Intelligent Cloud, Productivity &amp; Business Processes, and More Personal Computing segments. Paired with a one-page investment memo and Hold rating.</p>
+      <div class="project-stats">
+        <div><span class="stat-val">$455</span><span class="stat-label">Implied Price</span></div>
+        <div><span class="stat-val">~8%</span><span class="stat-label">Upside vs. Market</span></div>
+        <div><span class="stat-val">Hold</span><span class="stat-label">Final Rating</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Financial Modeling · GAAP</div>
+      <h3>Three-Statement <em>Integration Model</em></h3>
+      <p>Nine-worksheet financial model built from FY2020–FY2025 historicals with five years of projections — income statement, balance sheet, and cash flow statement fully linked. Applied retained-earnings rollforward, PP&amp;E schedules, D&amp;A, and working-capital assumptions. All projected periods balance to zero variance.</p>
+      <div class="project-stats">
+        <div><span class="stat-val">9</span><span class="stat-label">Worksheets</span></div>
+        <div><span class="stat-val">6Y / 5Y</span><span class="stat-label">Historicals / Projections</span></div>
+        <div><span class="stat-val">$0</span><span class="stat-label">Variance</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Operations · Automation</div>
+      <h3>CRM Pipeline <em>Tracker</em></h3>
+      <p>Multi-tab Excel workbook consolidating target companies, alumni contacts, and project opportunities into a single auditable pipeline for Knights Consulting Group. Leveraged AI-powered automation to categorize records and flag engagement gaps — replacing a manual logging process.</p>
+      <div class="project-stats">
+        <div><span class="stat-val">~40%</span><span class="stat-label">Time Saved</span></div>
+        <div><span class="stat-val">100+</span><span class="stat-label">Touchpoints Tracked</span></div>
+        <div><span class="stat-val">10+</span><span class="stat-label">Active Firms</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Budgeting · Governance</div>
+      <h3>Chapter <em>Budget Framework</em></h3>
+      <p>Administered a multi-source budget across 100+ Delta Sigma Pi chapter members, modeling fund allocation across executive positions and reconciling dues, sponsorship, and donation revenue into a structured disbursement framework. Currently developing a forward-looking semester budget for Pledge Education.</p>
+      <div class="project-stats">
+        <div><span class="stat-val">100+</span><span class="stat-label">Members</span></div>
+        <div><span class="stat-val">3</span><span class="stat-label">Revenue Streams</span></div>
+        <div><span class="stat-val">Multi-Cycle</span><span class="stat-label">Forecasting</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================ LEADERSHIP ================ -->
+<section id="leadership">
+  <div class="section-header">
+    <span class="section-num">§ 04 — Leadership</span>
+    <h2 class="section-title">Building structure <em>from the ground up.</em></h2>
+  </div>
+  <div class="leadership-grid">
+
+    <div class="leader-item">
+      <h3>Knights Consulting Group</h3>
+      <div class="leader-role">Director of Corporate Partnerships &amp; Alumni Relations</div>
+      <div class="leader-dates">NOV 2025 — PRESENT</div>
+      <p>Built corporate partnerships and alumni relations frameworks from the ground up — executing 100+ outreach touchpoints and establishing active engagement with 10+ national and Florida-based firms. Authored the Alumni Board Charter defining governance, engagement tiers, and roles.</p>
+    </div>
+
+    <div class="leader-item">
+      <h3>Delta Sigma Pi</h3>
+      <div class="leader-role">VP &amp; Finance Committee Chair</div>
+      <div class="leader-dates">APR 2025 — PRESENT</div>
+      <p>Administer chapter budget across 100+ members, modeling fund allocation and reconciling dues, sponsorship, and donation revenue. Currently forecasting resource needs for VP of Pledge Education and identifying reallocation opportunities to optimize fund distribution.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================ SKILLS LEDGER ================ -->
+<section id="skills">
+  <div class="section-header">
+    <span class="section-num">§ 05 — Ledger</span>
+    <h2 class="section-title">Technical &amp; <em>professional.</em></h2>
+  </div>
+  <div class="ledger">
+
+    <div class="ledger-col">
+      <h4 data-count="06">Technical Skills</h4>
+      <div class="ledger-row"><span class="ledger-row-name">Microsoft Excel</span><span class="ledger-row-tag">Advanced</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Bloomberg Terminal</span><span class="ledger-row-tag">Certified</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Financial Modeling</span><span class="ledger-row-tag">3-Statement · DCF</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">GAAP Principles</span><span class="ledger-row-tag">Coursework</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Microsoft Office Suite</span><span class="ledger-row-tag">Proficient</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">AI-Powered Automation</span><span class="ledger-row-tag">Applied</span></div>
+    </div>
+
+    <div class="ledger-col">
+      <h4 data-count="06">Finance &amp; Accounting</h4>
+      <div class="ledger-row"><span class="ledger-row-name">Discounted Cash Flow</span><span class="ledger-row-tag">Valuation</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Reconciliation</span><span class="ledger-row-tag">Operational</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Variance Analysis</span><span class="ledger-row-tag">Applied</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Budgeting &amp; Forecasting</span><span class="ledger-row-tag">Live Use</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Financial Statements</span><span class="ledger-row-tag">Built End-to-End</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Financial Reporting</span><span class="ledger-row-tag">Coursework</span></div>
+    </div>
+
+    <div class="ledger-col" style="grid-column: 1 / -1;">
+      <h4 data-count="03">Certifications</h4>
+      <div class="ledger-row"><span class="ledger-row-name">Bloomberg Finance Fundamentals</span><span class="ledger-row-tag">Bloomberg</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Bloomberg Market Concepts (BMC)</span><span class="ledger-row-tag">Bloomberg</span></div>
+      <div class="ledger-row"><span class="ledger-row-name">Microsoft Office Specialist: Excel Associate</span><span class="ledger-row-tag">Microsoft</span></div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<!-- ================ CONTACT ================ -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="section-header" style="margin-bottom: 2rem;">
+      <span class="section-num" style="color: var(--cream-deep); border-top-color: var(--cream-deep);">§ 06 — Contact</span>
+      <div></div>
+    </div>
+    <h2>Open to conversations about <em>finance, accounting,</em> and consulting roles — Summer 2026 and beyond.</h2>
+    <div class="contact-grid">
+      <div class="meta-item">
+        <span class="meta-label">Email</span>
+        <span class="meta-value"><a href="mailto:bennettparani@gmail.com">bennettparani@gmail.com</a></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Phone</span>
+        <span class="meta-value"><a href="tel:+14079697388">(407) 969-7388</a></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">LinkedIn</span>
+        <span class="meta-value"><a href="https://linkedin.com/in/bennettparani" target="_blank" rel="noopener">/in/bennettparani</a></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Based</span>
+        <span class="meta-value">Orlando, FL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 Bennett Parani — All Rights Reserved</div>
+    <div>Portfolio · Vol. I · ORLANDO</div>
+  </div>
+</footer>
+
+<script>
+  // Subtle reveal-on-scroll — editorial, not flashy
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section > *').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
