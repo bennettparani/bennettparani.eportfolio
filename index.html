@@ -8,9 +8,10 @@
 <style>
   :root {
     --bg: #f6f3ec;
-    --ink: #14213d;
-    --text: #2b2b2b;
-    --muted: #6b6b6b;
+    --ink: #000000;
+    --head: #1f4f9a;
+    --text: #000000;
+    --muted: #000000;
     --card: #ffffff;
     --dark: #14213d;
   }
@@ -52,6 +53,9 @@
     color: var(--ink);
     text-decoration: none;
   }
+  .id { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 22px; }
+  .id .reach a { text-decoration: none; color: var(--text); margin-right: 18px; }
+  .id .reach a:hover { text-decoration: underline; }
   nav ul {
     display: flex;
     gap: 28px;
@@ -97,11 +101,11 @@
   }
 
   /* Sections */
-  section { padding-top: 60px; padding-bottom: 60px; }
+  section { padding-top: 40px; padding-bottom: 40px; }
   h2 {
     font-size: 38px;
     font-weight: normal;
-    color: var(--ink);
+    color: var(--head);
     margin: 0 0 36px;
   }
   .about p {
@@ -123,7 +127,7 @@
   }
   .job h3 {
     font-size: 22px;
-    color: var(--ink);
+    color: var(--head);
     margin: 0;
   }
   .job .where {
@@ -131,6 +135,8 @@
     margin: 0 0 8px;
   }
   .job p { margin: 0; }
+  .duties { margin: 0; padding-left: 20px; }
+  .duties li { margin-bottom: 8px; }
 
   /* Projects */
   .cards {
@@ -150,7 +156,7 @@
   }
   .card h3 {
     font-size: 22px;
-    color: var(--ink);
+    color: var(--head);
     margin: 0 0 12px;
   }
   .card p { margin: 0; }
@@ -163,7 +169,7 @@
   }
   .skills h3 {
     font-size: 20px;
-    color: var(--ink);
+    color: var(--head);
     margin: 0 0 10px;
   }
   .skills ul {
@@ -192,18 +198,13 @@
   .contact .label { font-size: 15px; color: #a9b0bf; }
   .contact a { color: #ffffff; text-decoration: none; font-size: 19px; }
   .contact a:hover { text-decoration: underline; }
-  footer {
-    background: var(--dark);
-    color: #a9b0bf;
-    font-size: 15px;
-    padding: 0 0 32px;
-  }
 
   /* Phones and small screens */
   @media (max-width: 760px) {
     body { font-size: 17px; }
     .wrap { padding-left: 18px; padding-right: 18px; }
     nav ul { display: none; }
+    .id .reach { font-size: 16px; }
     .hero { padding-top: 50px; padding-bottom: 30px; }
     .hero h1 { font-size: 48px; }
     .hero p.lead { font-size: 19px; }
@@ -218,7 +219,10 @@
 
 <header>
   <nav class="wrap">
-    <a class="brand" href="#top">Bennett Parani</a>
+    <div class="id">
+      <a class="brand" href="#top">Bennett Parani</a>
+      <span class="reach"><a href="tel:+14079697388">(407) 969-7388</a><a href="mailto:bennettparani@gmail.com">bennettparani@gmail.com</a></span>
+    </div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -233,7 +237,7 @@
 
   <div class="hero wrap">
     <h1>Bennett Parani</h1>
-    <p class="lead">Accounting and finance professional in Orlando, focused on tax, bookkeeping, and financial analysis.</p>
+    <p class="lead">Accounting and finance professional in Orlando, focused on audit, financial analysis, and due diligence.</p>
     <div class="facts">
       <div>
         <div class="label">Location</div>
@@ -245,7 +249,7 @@
       </div>
       <div>
         <div class="label">Focus</div>
-        <div class="value">Tax, Audit, and Financial Analysis</div>
+        <div class="value">Audit, Financial Analysis &amp; Due Diligence</div>
       </div>
     </div>
   </div>
@@ -253,9 +257,9 @@
   <section id="about" class="about wrap">
     <h2>About</h2>
     <p>
-      I am a Staff Accountant Intern at Kerby Accounting &amp; Business Solutions, where I prepare individual and
-      business tax returns, keep client books in order, and analyze financial statements for due diligence and
-      advisory work.
+      I am a Staff Accountant Intern at Kerby Accounting &amp; Business Solutions, where I analyze financial
+      statements on due diligence and advisory engagements, review and correct client books, and prepare
+      individual and business tax returns.
     </p>
     <p>
       I study Accounting and Finance at the University of Central Florida and am working toward the CPA. I like
@@ -272,12 +276,13 @@
       <div>
         <h3>Staff Accountant Intern</h3>
         <p class="where">Kerby Accounting &amp; Business Solutions</p>
-        <p>
-          Prepare 1040, 1120-S, and LLC returns in Drake Tax, including book-to-tax reconciliations and
-          depreciation. Clean up client books, reconcile accounts of up to $500K a month in QuickBooks for clients
-          with up to $10M in revenue, file Florida sales tax returns, and analyze financial statements on buy-side
-          due diligence engagements.
-        </p>
+        <ul class="duties">
+          <li>Analyze financial statements on buy-side due diligence and business advisory engagements, identifying earnings-quality issues and performance trends that inform clients&rsquo; acquisition, divestiture, and operating decisions. On one acquisition review, identified omitted payroll expenses that overstated the target&rsquo;s earnings.</li>
+          <li>Review and correct client books before preparing S-corporation returns, reclassifying miscoded revenue and non-deductible expenses and carrying the corrected income through shareholder K-1s and QBI calculations.</li>
+          <li>Reconcile bank and credit card accounts of up to $500K per month and maintain general ledgers in QuickBooks for clients with up to $10M in revenue, isolating an $11 discrepancy across 2,000+ transactions through Excel analysis.</li>
+          <li>Prepare federal individual and business income tax returns (1040, 1120-S, LLCs) in Drake Tax, including book-to-tax reconciliations, &sect;179/MACRS depreciation, and multi-state nonresident filings.</li>
+          <li>Calculate and file monthly and quarterly Florida sales tax returns (DR-15), coordinating with clients on source records.</li>
+        </ul>
       </div>
     </div>
 
@@ -367,9 +372,10 @@
       <div>
         <h3>Accounting &amp; Finance</h3>
         <ul>
-          <li>Tax Preparation</li>
+          <li>Financial Statement Analysis &amp; GAAP</li>
+          <li>Due Diligence</li>
           <li>Reconciliations &amp; Bookkeeping</li>
-          <li>Financial Statements &amp; GAAP</li>
+          <li>Tax Preparation</li>
           <li>Financial Modeling &amp; Forecasting</li>
         </ul>
       </div>
@@ -408,9 +414,6 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap">&copy; 2026 Bennett Parani</div>
-</footer>
 
 </body>
 </html>
