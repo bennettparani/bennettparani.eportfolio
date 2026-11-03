@@ -4,15 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bennett Parani | Accounting &amp; Finance</title>
-<meta name="description" content="Bennett Parani, accounting and finance professional in Orlando, Florida.">
+<meta name="description" content="Bennett Parani, accounting and finance professional in Orlando, Florida, focused on audit, financial analysis, and due diligence.">
 <style>
   :root {
     --bg: #f6f3ec;
-    --ink: #000000;
-    --head: #1f4f9a;
+    --panel: #ffffff;
     --text: #000000;
-    --muted: #000000;
-    --card: #ffffff;
+    --head: #1f4f9a;
     --dark: #14213d;
   }
   * { box-sizing: border-box; }
@@ -27,13 +25,13 @@
   }
   a { color: inherit; }
   .wrap {
-    max-width: 1040px;
+    max-width: 1080px;
     margin: 0 auto;
     padding-left: 32px;
     padding-right: 32px;
   }
 
-  /* Navigation */
+  /* Top bar */
   header {
     position: sticky;
     top: 0;
@@ -44,174 +42,172 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    gap: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
-  .brand {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .id { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 22px; }
-  .id .reach a { text-decoration: none; color: var(--text); margin-right: 18px; }
-  .id .reach a:hover { text-decoration: underline; }
+  .id { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 22px; }
+  .brand { font-size: 20px; font-weight: bold; text-decoration: none; }
+  .reach a { text-decoration: none; margin-right: 18px; }
+  .reach a:hover, nav ul a:hover { text-decoration: underline; }
   nav ul {
     display: flex;
-    gap: 28px;
+    gap: 26px;
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  nav ul a {
-    text-decoration: none;
-    color: var(--text);
-  }
-  nav ul a:hover { color: var(--ink); text-decoration: underline; }
+  nav ul a { text-decoration: none; }
 
   /* Hero */
-  .hero {
-    padding-top: 90px;
-    padding-bottom: 50px;
-  }
+  .hero { padding-top: 80px; padding-bottom: 56px; }
   .hero h1 {
-    font-size: 72px;
+    font-size: 76px;
     line-height: 1.05;
     font-weight: normal;
-    color: var(--ink);
     margin: 0 0 22px;
   }
-  .hero p.lead {
-    font-size: 22px;
-    max-width: 640px;
-    margin: 0 0 48px;
-  }
+  .lead { font-size: 23px; max-width: 700px; margin: 0 0 44px; }
   .facts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
-  .facts .label {
-    font-size: 15px;
-    color: var(--muted);
+  .label { font-size: 15px; }
+  .facts .value { font-size: 20px; }
+
+  /* Numbers band */
+  .band { background: var(--panel); padding-top: 44px; padding-bottom: 44px; }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
   }
-  .facts .value {
-    font-size: 19px;
-    color: var(--ink);
-  }
+  .stat .num { font-size: 44px; line-height: 1.1; }
+  .stat .cap { font-size: 16px; margin-top: 6px; }
 
   /* Sections */
-  section { padding-top: 40px; padding-bottom: 40px; }
+  section { padding-top: 56px; padding-bottom: 40px; }
   h2 {
-    font-size: 38px;
+    font-size: 40px;
     font-weight: normal;
     color: var(--head);
-    margin: 0 0 36px;
+    margin: 0 0 30px;
   }
-  .about p {
-    max-width: 760px;
-    margin: 0 0 18px;
+  h3 { color: var(--head); }
+  .about p { max-width: 780px; margin: 0 0 18px; }
+
+  /* How I work */
+  .ways {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 40px;
   }
+  .ways h3 { font-size: 21px; margin: 0 0 8px; }
+  .ways p { margin: 0; }
 
   /* Experience */
   .job {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 210px 1fr;
     gap: 32px;
     margin-bottom: 40px;
   }
-  .job .when {
-    color: var(--muted);
-    font-size: 17px;
-    padding-top: 3px;
-  }
-  .job h3 {
-    font-size: 22px;
-    color: var(--head);
-    margin: 0;
-  }
-  .job .where {
-    font-style: italic;
-    margin: 0 0 8px;
-  }
-  .job p { margin: 0; }
+  .when { font-size: 17px; padding-top: 3px; }
+  .job h3 { font-size: 23px; margin: 0; }
+  .where { font-style: italic; margin: 0 0 10px; }
+  .job p { margin: 0 0 10px; }
   .duties { margin: 0; padding-left: 20px; }
   .duties li { margin-bottom: 8px; }
 
-  /* Projects */
+  /* Selected work */
   .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
   }
   .card {
-    background: var(--card);
-    padding: 30px 32px;
+    background: var(--panel);
+    padding: 32px 34px;
     border-radius: 6px;
+    display: flex;
+    flex-direction: column;
   }
-  .card .tag {
-    font-size: 15px;
-    color: var(--muted);
-    margin: 0 0 6px;
+  .tag { font-size: 15px; margin: 0 0 6px; }
+  .card h3 { font-size: 24px; margin: 0 0 12px; }
+  .card p { margin: 0 0 24px; }
+  .mini {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: auto;
   }
-  .card h3 {
-    font-size: 22px;
-    color: var(--head);
-    margin: 0 0 12px;
+  .mini .num { font-size: 28px; line-height: 1.15; }
+  .mini .cap { font-size: 15px; }
+
+  /* Leadership */
+  .lead-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
-  .card p { margin: 0; }
+  .lead-grid h3 { font-size: 23px; margin: 0; }
+  .lead-grid .role { font-style: italic; margin: 0; }
+  .lead-grid .dates { font-size: 16px; margin: 0 0 12px; }
+  .lead-grid p { margin: 0 0 12px; }
 
   /* Skills */
-  .skills {
+  .skill-cols {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 56px;
   }
-  .skills h3 {
-    font-size: 20px;
-    color: var(--head);
-    margin: 0 0 10px;
-  }
-  .skills ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .skills li { margin-bottom: 4px; }
+  .skill-cols h3 { font-size: 22px; margin: 0 0 14px; }
+  .skill { margin-bottom: 14px; }
+  .skill strong { display: block; }
+  .certs { margin-top: 36px; }
+  .certs h3 { font-size: 22px; margin: 0 0 12px; }
+  .certs ul { margin: 0; padding-left: 20px; columns: 2; column-gap: 56px; }
+  .certs li { margin-bottom: 6px; break-inside: avoid; }
 
   /* Contact */
   .contact {
     background: var(--dark);
-    color: #f6f3ec;
-    padding-top: 80px;
+    color: #ffffff;
+    padding-top: 76px;
     padding-bottom: 80px;
-    margin-top: 40px;
+    margin-top: 48px;
   }
-  .contact h2 { color: #ffffff; margin-bottom: 18px; }
-  .contact p { max-width: 620px; margin: 0 0 32px; color: #dcdcdc; }
+  .contact h2 { color: #ffffff; margin-bottom: 16px; }
+  .contact p { max-width: 640px; margin: 0 0 32px; }
   .contact .links {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
     justify-content: start;
     gap: 48px;
   }
-  .contact .label { font-size: 15px; color: #a9b0bf; }
-  .contact a { color: #ffffff; text-decoration: none; font-size: 19px; }
+  .contact .label { color: #c9cfdb; }
+  .contact a, .contact .plain { text-decoration: none; font-size: 19px; }
   .contact a:hover { text-decoration: underline; }
 
-  /* Phones and small screens */
-  @media (max-width: 760px) {
+  /* Small screens */
+  @media (max-width: 820px) {
     body { font-size: 17px; }
     .wrap { padding-left: 18px; padding-right: 18px; }
     nav ul { display: none; }
-    .id .reach { font-size: 16px; }
-    .hero { padding-top: 50px; padding-bottom: 30px; }
-    .hero h1 { font-size: 48px; }
-    .hero p.lead { font-size: 19px; }
-    .facts, .cards, .skills, .contact .links { grid-template-columns: 1fr; gap: 18px; }
+    .reach { font-size: 16px; }
+    .hero { padding-top: 44px; padding-bottom: 36px; }
+    .hero h1 { font-size: 50px; }
+    .lead { font-size: 20px; }
+    .facts, .ways, .cards, .lead-grid, .skill-cols, .contact .links { grid-template-columns: 1fr; gap: 20px; }
+    .stats { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .stat .num { font-size: 36px; }
     .job { grid-template-columns: 1fr; gap: 4px; }
-    h2 { font-size: 32px; margin-bottom: 26px; }
-    section { padding-top: 40px; padding-bottom: 40px; }
+    .certs ul { columns: 1; }
+    h2 { font-size: 34px; margin-bottom: 24px; }
+    section { padding-top: 40px; padding-bottom: 28px; }
+    .card { padding: 26px 22px; }
   }
 </style>
 </head>
@@ -226,7 +222,8 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#leadership">Leadership</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -254,18 +251,56 @@
     </div>
   </div>
 
+  <div class="band">
+    <div class="wrap stats">
+      <div class="stat">
+        <div class="num">$10M</div>
+        <div class="cap">Revenue of the largest clients whose books I maintain</div>
+      </div>
+      <div class="stat">
+        <div class="num">$500K</div>
+        <div class="cap">Monthly activity in the client accounts I reconcile</div>
+      </div>
+      <div class="stat">
+        <div class="num">150+</div>
+        <div class="cap">Firms in the partnership pipeline I built at KCG</div>
+      </div>
+      <div class="stat">
+        <div class="num">100+</div>
+        <div class="cap">Members covered by the chapter budget I manage</div>
+      </div>
+    </div>
+  </div>
+
   <section id="about" class="about wrap">
     <h2>About</h2>
     <p>
-      I am a Staff Accountant Intern at Kerby Accounting &amp; Business Solutions, where I analyze financial
-      statements on due diligence and advisory engagements, review and correct client books, and prepare
-      individual and business tax returns.
+      I am interested in how accounting and finance explain the way a business is really performing. On the
+      accounting side, I like the structure behind GAAP, reconciliations, and financial statements that actually
+      tie. On the finance side, I enjoy using those numbers to model cash flows, test assumptions, and support
+      better decisions.
     </p>
     <p>
-      I study Accounting and Finance at the University of Central Florida and am working toward the CPA. I like
-      work that makes the numbers clear and reliable: books that tie out, returns that are right the first time,
-      and models that balance.
+      Today I work as a Staff Accountant Intern at Kerby Accounting &amp; Business Solutions, where I analyze
+      financial statements on due diligence and advisory engagements, clean up and reconcile client books, and
+      prepare business and individual tax returns. I study Accounting and Finance at the University of Central
+      Florida and am working toward the CPA.
     </p>
+
+    <div class="ways">
+      <div>
+        <h3>Tie everything out</h3>
+        <p>A reconciliation is not finished until it balances. I once traced an $11 difference across more than 2,000 transactions back to its source.</p>
+      </div>
+      <div>
+        <h3>Look for what is missing</h3>
+        <p>In due diligence, the number that matters most can be the one that is not there, like payroll expenses left out of a target&rsquo;s reported earnings.</p>
+      </div>
+      <div>
+        <h3>Replace manual work</h3>
+        <p>When a process is repetitive, I build a tool for it. My CRM tracker for Knights Consulting Group cut outreach tracking time by about 40%.</p>
+      </div>
+    </div>
   </section>
 
   <section id="experience" class="wrap">
@@ -275,7 +310,7 @@
       <div class="when">May 2026 &ndash; Present</div>
       <div>
         <h3>Staff Accountant Intern</h3>
-        <p class="where">Kerby Accounting &amp; Business Solutions</p>
+        <p class="where">Kerby Accounting &amp; Business Solutions, Orlando, FL</p>
         <ul class="duties">
           <li>Analyze financial statements on buy-side due diligence and business advisory engagements, identifying earnings-quality issues and performance trends that inform clients&rsquo; acquisition, divestiture, and operating decisions. On one acquisition review, identified omitted payroll expenses that overstated the target&rsquo;s earnings.</li>
           <li>Review and correct client books before preparing S-corporation returns, reclassifying miscoded revenue and non-deductible expenses and carrying the corrected income through shareholder K-1s and QBI calculations.</li>
@@ -290,10 +325,12 @@
       <div class="when">July 2025 &ndash; June 2026</div>
       <div>
         <h3>Leasing &amp; Marketing Assistant</h3>
-        <p class="where">Asset Living</p>
+        <p class="where">Asset Living, Orlando, FL</p>
         <p>
-          Helped pre-lease 90% of 700+ beds ahead of opening, ranking the community first among new developments,
-          and built Excel pricing and market-tracking tools to guide concession decisions.
+          Executed the lease-up strategy for a new student-housing community in a crowded market near UCF, helping
+          pre-lease 90% of 700+ beds before opening and ranking the community first among new developments. Built
+          Excel pricing, availability, and market-tracking tools to monitor competitors and support concession
+          recommendations while balancing ownership&rsquo;s budget goals.
         </p>
       </div>
     </div>
@@ -302,56 +339,110 @@
       <div class="when">June 2025 &ndash; May 2026</div>
       <div>
         <h3>Accounting &amp; Finance Coach</h3>
-        <p class="where">We Know Campus</p>
+        <p class="where">We Know Campus, Orlando, FL</p>
         <p>
-          Advised students on financial aid, scholarships, and budgeting, helping clients secure more than
-          $10,000 in aid, and built Excel budgeting tools to organize their plans.
-        </p>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">April 2025 &ndash; Present</div>
-      <div>
-        <h3>VP of Pledge Education &amp; Finance Chair</h3>
-        <p class="where">Delta Sigma Pi</p>
-        <p>
-          Manage the chapter budget for 100+ members, reconciling dues, sponsorship, and donation revenue and
-          forecasting each semester&rsquo;s needs.
-        </p>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="when">November 2025 &ndash; May 2026</div>
-      <div>
-        <h3>Director of Corporate Partnerships &amp; Alumni Relations</h3>
-        <p class="where">Knights Consulting Group, UCF</p>
-        <p>
-          Served on the inaugural executive board and built a partnership pipeline of 150+ national and
-          Florida-based firms.
+          Mentored students on FAFSA, scholarships, budgeting, and funding strategy, helping clients identify and
+          apply for more than $10,000 in aid. Designed Excel budgeting tools that turned financial-aid data into
+          structured plans, reviewing 15&ndash;20 student profiles each quarter.
         </p>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="wrap">
-    <h2>Projects</h2>
+  <section id="work" class="wrap">
+    <h2>Selected Work</h2>
     <div class="cards">
+
+      <div class="card">
+        <p class="tag">Valuation</p>
+        <h3>Microsoft (MSFT) Equity Valuation</h3>
+        <p>
+          An integrated three-statement model with segment-level projections for Intelligent Cloud, Productivity
+          &amp; Business Processes, and More Personal Computing under bear, base, and bull cases. Paired with a
+          one-page investment memo supporting a Hold rating.
+        </p>
+        <div class="mini">
+          <div><div class="num">$455</div><div class="cap">Implied price</div></div>
+          <div><div class="num">Hold</div><div class="cap">Final rating</div></div>
+          <div><div class="num">3</div><div class="cap">Scenarios modeled</div></div>
+        </div>
+      </div>
+
       <div class="card">
         <p class="tag">Financial Modeling</p>
-        <h3>Microsoft Three-Statement Model</h3>
+        <h3>Three-Statement Integration Model</h3>
         <p>
-          A fully linked income statement, balance sheet, and cash flow statement for Microsoft, built from six
-          years of historical results with five years of projections. Every period balances with zero variance.
+          A nine-worksheet model linking the income statement, balance sheet, and cash flow statement from
+          FY2020&ndash;FY2025 historicals with five years of projections, including a retained-earnings rollforward,
+          PP&amp;E and D&amp;A schedules, and working-capital assumptions.
         </p>
+        <div class="mini">
+          <div><div class="num">9</div><div class="cap">Worksheets</div></div>
+          <div><div class="num">6 + 5</div><div class="cap">Years of historicals and projections</div></div>
+          <div><div class="num">$0</div><div class="cap">Variance in every period</div></div>
+        </div>
       </div>
+
       <div class="card">
         <p class="tag">Excel Automation</p>
         <h3>Partnerships &amp; Alumni CRM Tracker</h3>
         <p>
-          A multi-tab workbook for Knights Consulting Group that brings target companies, contacts, and alumni into
-          one pipeline, with automated categorization and gap-flagging. It cut tracking time by about 40%.
+          A multi-tab workbook for Knights Consulting Group that consolidates target companies, alumni contacts, and
+          project opportunities into one auditable pipeline. AI-powered automation categorizes records and flags
+          engagement gaps, replacing a manual logging process.
+        </p>
+        <div class="mini">
+          <div><div class="num">~40%</div><div class="cap">Time saved</div></div>
+          <div><div class="num">150+</div><div class="cap">Firms tracked</div></div>
+          <div><div class="num">100+</div><div class="cap">Outreach touchpoints</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="tag">Budgeting</p>
+        <h3>Chapter Budget Framework</h3>
+        <p>
+          A multi-source budget for a 100+ member Delta Sigma Pi chapter, reconciling dues, sponsorship, and
+          donation revenue and allocating funds across executive positions. Each cycle&rsquo;s Pledge Education
+          budget is forecast from prior-semester data.
+        </p>
+        <div class="mini">
+          <div><div class="num">100+</div><div class="cap">Members</div></div>
+          <div><div class="num">3</div><div class="cap">Revenue streams reconciled</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="leadership" class="wrap">
+    <h2>Leadership</h2>
+    <div class="lead-grid">
+      <div>
+        <h3>Delta Sigma Pi</h3>
+        <p class="role">VP of Pledge Education &amp; Finance Chair</p>
+        <p class="dates">April 2025 &ndash; Present</p>
+        <p>
+          Administer a multi-source budget for a 100+ member professional business fraternity, allocating funds to
+          executive positions and reconciling dues, sponsorship, and donation revenue.
+        </p>
+        <p>
+          As VP of Pledge Education, build the program budget from prior-semester data and forecast resource needs.
+          Represented the chapter at Grand Chapter Congress.
+        </p>
+      </div>
+      <div>
+        <h3>Knights Consulting Group, UCF</h3>
+        <p class="role">Director of Corporate Partnerships &amp; Alumni Relations</p>
+        <p class="dates">November 2025 &ndash; May 2026</p>
+        <p>
+          Served on the inaugural executive board of UCF&rsquo;s student-run consulting group, developing consulting
+          fundamentals through casework and industry simulations.
+        </p>
+        <p>
+          Built the corporate partnerships and alumni programs from the ground up, growing a pipeline of 150+
+          national and Florida-based firms, and wrote the Alumni Board Charter defining its governance, engagement
+          tiers, and roles.
         </p>
       </div>
     </div>
@@ -359,35 +450,33 @@
 
   <section id="skills" class="wrap">
     <h2>Skills</h2>
-    <div class="skills">
-      <div>
-        <h3>Software</h3>
-        <ul>
-          <li>Drake Tax</li>
-          <li>QuickBooks</li>
-          <li>Microsoft Excel (Advanced)</li>
-          <li>Bloomberg Terminal</li>
-        </ul>
-      </div>
+    <div class="skill-cols">
       <div>
         <h3>Accounting &amp; Finance</h3>
-        <ul>
-          <li>Financial Statement Analysis &amp; GAAP</li>
-          <li>Due Diligence</li>
-          <li>Reconciliations &amp; Bookkeeping</li>
-          <li>Tax Preparation</li>
-          <li>Financial Modeling &amp; Forecasting</li>
-        </ul>
+        <div class="skill"><strong>Financial statement analysis</strong>Buy-side due diligence and business advisory engagements</div>
+        <div class="skill"><strong>Reconciliations &amp; general ledger</strong>Bank and card accounts up to $500K per month</div>
+        <div class="skill"><strong>Tax preparation</strong>1040, 1120-S, and LLC returns, &sect;179/MACRS, multi-state filings</div>
+        <div class="skill"><strong>Sales &amp; use tax</strong>Monthly and quarterly Florida DR-15 filings</div>
+        <div class="skill"><strong>Valuation &amp; modeling</strong>DCF, three-statement models, and scenario analysis</div>
+        <div class="skill"><strong>Budgeting &amp; forecasting</strong>Multi-source budget for a 100+ member organization</div>
       </div>
       <div>
-        <h3>Certifications</h3>
-        <ul>
-          <li>Microsoft Office Specialist: Excel</li>
-          <li>Bloomberg Market Concepts</li>
-          <li>Bloomberg Finance Fundamentals</li>
-          <li>Forage: PwC Audit, Goldman Sachs, BCG</li>
-        </ul>
+        <h3>Tools</h3>
+        <div class="skill"><strong>Microsoft Excel (Advanced)</strong>Financial models, transaction-level reconciliations, pricing and budgeting tools</div>
+        <div class="skill"><strong>Drake Tax</strong>Daily use for individual and business returns</div>
+        <div class="skill"><strong>QuickBooks</strong>General ledgers for clients with up to $10M in revenue</div>
+        <div class="skill"><strong>Bloomberg Terminal</strong>Market Concepts and Finance Fundamentals certified</div>
+        <div class="skill"><strong>AI-powered automation</strong>Record categorization and gap-flagging in Excel workflows</div>
       </div>
+    </div>
+    <div class="certs">
+      <h3>Certifications</h3>
+      <ul>
+        <li>Microsoft Office Specialist: Excel Associate</li>
+        <li>Bloomberg Market Concepts</li>
+        <li>Bloomberg Finance Fundamentals</li>
+        <li>Forage Job Simulations: PwC Audit, Goldman Sachs Operations, BCG Strategy Consulting</li>
+      </ul>
     </div>
   </section>
 
@@ -396,7 +485,7 @@
 <section id="contact" class="contact">
   <div class="wrap">
     <h2>Let&rsquo;s connect</h2>
-    <p>I am always open to conversations about accounting, finance, and new opportunities.</p>
+    <p>I am always open to conversations about accounting, finance, and consulting.</p>
     <div class="links">
       <div>
         <div class="label">Email</div>
@@ -410,10 +499,13 @@
         <div class="label">LinkedIn</div>
         <a href="https://www.linkedin.com/in/bennettparani" target="_blank" rel="noopener">linkedin.com/in/bennettparani</a>
       </div>
+      <div>
+        <div class="label">Based in</div>
+        <span class="plain">Orlando, FL</span>
+      </div>
     </div>
   </div>
 </section>
-
 
 </body>
 </html>
